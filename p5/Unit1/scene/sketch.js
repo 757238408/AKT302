@@ -6,8 +6,6 @@ function draw() {
   background(152,245,255);
   noStroke();
 
-
-
   fill(72,61,139)
   arc(400, 250, 150, 150,PI + QUARTER_PI , PI - QUARTER_PI, PIE);
 
