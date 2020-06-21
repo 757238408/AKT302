@@ -1,12 +1,8 @@
-var a,b,c,song1;
+var a,b,c;
 var x=25;
 var s=20
 
-function preload(){
-  song1 =loadSound('assets/music.MP3');
-
 function setup() {
-
   createCanvas(500, 500);
   strokeCap(ROUND);
   strokeJoin(ROUND);
@@ -20,7 +16,7 @@ function draw() {
   b=random(0,255);
   c=random(0,255);
 
- x=x+1;
+  x=x+1;
 if(x>335){
   x=25;
 }
@@ -32,8 +28,6 @@ if(s>50){
 
 
 if (mouseIsPressed) {
-
-  song1.play();
 
   textSize(50);
   fill(a,b,c);
