@@ -26,7 +26,6 @@ if(s>50){
   s=20;
 }
 
-
 if (mouseIsPressed) {
 
   textSize(50);
@@ -45,8 +44,6 @@ if (mouseIsPressed) {
   textSize(s);
   fill(c,a,b);
   text("Greedy beans",150,400)
-
-
 
 } else {
   fill(72,61,139);
@@ -82,7 +79,4 @@ if (mouseIsPressed) {
   fill(0);
   textSize(10);
   text(mouseX + ", " + mouseY, 10, 20);
-
-
-
 }
