@@ -14,7 +14,6 @@ function setup() {
   pic4 = loadImage("assets/boat.png");
   mic = new p5.AudioIn();
   mic.start();
-  //textmode(CENTER);
 }
 
 function draw() {
