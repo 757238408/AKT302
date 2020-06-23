@@ -10,7 +10,7 @@ var pic2;
 var song1;
 
 function preload() {
-  font = loadFont('assets/HoboStd.otf');
+  font = loadfont('assets/HoboStd.otf');
   pic1 = loadImage('assets/a.jpg');
   pic2 = loadImage('assets/b.jpg');
   song1 = loadSound('assets/d.mp3')
@@ -24,10 +24,12 @@ function setup() {
 }
 
 function draw() {
-  image(1, 0, 0);
+  image(pic1, 0, 0);
 switch (myState) {
 
 case 0:
+  background("#ffcb08");
+  image(pic1, 0, 0);
   fill("white");
   textSize(20);
   fill(random(255), random(255), random(255));
@@ -40,6 +42,8 @@ case 0:
 break;
 
 case 1:
+  background(100);
+  image(pic1, 0, 0);
   myTimer++;
 if (myTimer >= 10) {
   myTimer = 4;
@@ -48,6 +52,8 @@ if (myTimer >= 10) {
   break;
 
   case 2:
+  background(100);
+  image(pic1, 0, 0);
   vol = mic.getLevel();
   if (vol >= 0.2) {
   myState = 3;
@@ -59,6 +65,7 @@ if (myTimer >= 10) {
 break;
 
 case 3:
+  background(200);
   image(pic2, 312, y);
   y = y - 10;
 if (y <= 0) {
@@ -71,6 +78,7 @@ case 4:
   textSize(79);
   text("great voice", 244, 171);
   y = 337
+  background("#ffcb08");
 break;
   }
 }
@@ -79,13 +87,16 @@ function mouseReleased() {
   if (myState == 0) {
     myState = 1;
   }
+  if (myState == 2) {
+  myState = 3;
+  }
 
 
   if (myState == 4) {
     myState = 0;
   }
 
-  console.log(mouseX + "," + mouseY);
+  print.log(mouseX + "," + mouseY);
 }
 function touchStarted() {
   getAudioContext().resume();
