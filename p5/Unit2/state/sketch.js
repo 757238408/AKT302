@@ -22,13 +22,11 @@ function draw() {
     text("we are in 2",100,100);
     break;
   }
+}
 
 function mouseReleased(){
   state = state + 1;
 if(state > 2){
   state = 0;
 }
-
-}
-
 }
