@@ -33,8 +33,8 @@ for(let i = 0; i < cars.length; i++) {
 class Car{
 
 constructor(){
-  this.pos = createVector(width/2,height/2+60);
-  this.vel = createVector(random(-1.5,1.5),random(-6,-3));
+  this.pos = createVector(width/2,height/2 + 150);
+  this.vel = createVector(random(-2,2),random(-10,-5));
   this.r = random(255);
   this.g = random(255);
   this.b = random(255);
