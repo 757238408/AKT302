@@ -1,4 +1,4 @@
-var pic1,pic2,pic3,pic4,f;
+let pic1,pic2,pic3,pic4,f;
 let state = 0 ;
 let mic;
 let vol;
