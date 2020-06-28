@@ -90,3 +90,8 @@ state = 0;
 timer = 0;
 x = 500;
 }
+
+function touchStarted() {
+  getAudioContext().
+  resume();
+}
