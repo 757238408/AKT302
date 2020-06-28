@@ -7,7 +7,7 @@ let x = 500 ;
 
 function setup() {
   createCanvas(600, 600);
-  f = loadFont("assets/HoboStd.otf");
+  f = loadFont("WashYourHand.ttf");
   pic1 = loadImage("assets/1-01.png");
   pic2 = loadImage("assets/2-02.png");
   pic3 = loadImage("assets/3-03.png");
