@@ -25,7 +25,7 @@ case 0:
   background(127,255,170);
   textSize(20);
   text("Dragon Boat Festival",215,80);
-  textSize(15);
+  textSize(14);
   timer++;
   text(timer,30,590);
 if(timer > 100){
