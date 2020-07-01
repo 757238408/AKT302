@@ -10,7 +10,7 @@ var y = 0;
 var z = 0;
 
 // other variables
-var bunnyImage;
+var me;
 
 function setup() {
 
@@ -22,7 +22,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  bunnyImage = loadImage("assets/bunny.jpg");
+  me = loadImage("assets/me.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -31,7 +31,7 @@ function setup() {
 function draw() {
 
   background('#c6f5fe'); // light blue
-    // add an image for the background? 
+    // add an image for the background?
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -44,7 +44,7 @@ function draw() {
   push(); // before you use translate, rotate, or scale commands, push and then pop after
   translate(xPosition, yPosition); // move everything over by x, y
   // rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
-  image(bunnyImage, 0, 0, 500, 500);
+  image(me, 0, 0, 500, 500);
   //  	rect(0, 0, 100, 100) ;
   pop();
 
