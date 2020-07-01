@@ -11,6 +11,7 @@ var ice1;
 var ice2;
 var donut;
 var playerImage;
+var win,lose;
 //var backgroundImage;
 
 function preload() {
@@ -19,13 +20,17 @@ function preload() {
   ice1 = loadImage("assets/icecream1.png");
   ice2 = loadImage("assets/icecream2.png");
   donut = loadImage("assets/donut.png");
-  playerImage = loadImage("assets/pig.png");
+  playerImage = loadImage("assets/young.jpg");
+  win = loadImage("assets/win.jpg");
+  lose = loadImage("assets/lose.jpg");
+
   //backgroundImage=loadImage("")
 
 }
 
 function setup() {
   createCanvas(displayWidth,displayHeight);
+  imageMode(CENTER);
 }
 
 function draw(){
@@ -56,6 +61,7 @@ function draw(){
 
     case "win":
     buildText("YOU WON", "You successfully lose your weight)");
+    image(win,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
         state = 0;
       //isGameSet = false;
@@ -64,7 +70,7 @@ function draw(){
 
     case "lose":
       buildText("YOU LOST", "You become a pig\n\n\n (click to restart)");
-      image(pig,width/2,height/2);
+      image(lose,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
         state = 0;
         //isGameSet = false;
@@ -76,7 +82,7 @@ function draw(){
 // Player Constructor
 function Player(){
   this.position = createVector(width/2,height/2);
-  this.size = 100;
+  this.size = 80;
   this.speed = 10;
 
 
@@ -250,7 +256,7 @@ function startGame(){
   }
   player = new Player();
   //isGameSet = true;
-  timer = 30;
+  timer = 10;
   state++;
 }
 /* LET'S PLAN

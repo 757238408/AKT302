@@ -52,26 +52,26 @@ function draw() {
   // Here is where you can design this program!
   fill('white');
   noStroke();
-  textSize(300);
+  textSize(100);
   textAlign(CENTER);
   text("KIMI", width / 2, height / 2);
 
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y.toFixed(2), 25, 170);
-  text("z = " + z.toFixed(4), 25, 190);
+  //textAlign(LEFT);
+  //textSize(20);
+  //fill('black');
+  //text("orientation data:", 25, 25);
+  //textSize(15);
+  //text("alpha: " + alpha, 25, 50);
+  //text("beta: " + beta, 25, 70);
+  //text("gamma: " + gamma, 25, 90);
+  //textSize(20);
+  //text("acceleration data:", 25, 125);
+  //textSize(15);
+  //text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+  t//ext("y = " + y.toFixed(2), 25, 170);
+  //text("z = " + z.toFixed(4), 25, 190);
 
 
 
