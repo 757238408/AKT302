@@ -64,6 +64,7 @@ function draw(){
 
     case "lose":
       buildText("YOU LOST", "You become a pig\n\n\n (click to restart)");
+      image(pig,width/2,height/2);
       if (mouseIsPressed) {
         state = 0;
         //isGameSet = false;
