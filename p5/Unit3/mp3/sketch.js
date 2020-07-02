@@ -23,7 +23,7 @@ function preload() {
   playerImage = loadImage("assets/young.jpg");
   win = loadImage("assets/win.jpg");
   lose = loadImage("assets/lose.jpg");
-  backgroundImage = loadImage("assets/background.jpg")
+  backgroundImage = loadImage("assets/backgroundd.jpg")
 
 }
 
@@ -34,7 +34,7 @@ function setup() {
 
 function draw(){
   background('black');
-  background(backgroundImage);
+  image(backgroundImage,displayWidth/2,displayHeight/2,displayWidth,displayHeight);
 
   switch (state) {
     case 0:
@@ -225,7 +225,7 @@ function manageMovement(){
 
 
 function buildText(textTitle,textMessage){
-  fill("white");
+  fill("black");
   textSize(72);
   textAlign(CENTER, CENTER);
   text(textTitle,width/2,height/3);
