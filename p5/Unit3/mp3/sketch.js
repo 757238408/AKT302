@@ -12,7 +12,7 @@ var ice2;
 var donut;
 var playerImage;
 var win,lose;
-//var backgroundImage;
+var backgroundImage;
 
 function preload() {
   //soundFormats("");
@@ -23,8 +23,7 @@ function preload() {
   playerImage = loadImage("assets/young.jpg");
   win = loadImage("assets/win.jpg");
   lose = loadImage("assets/lose.jpg");
-
-  //backgroundImage=loadImage("")
+  backgroundImage = loadImage("assets/background.jpg")
 
 }
 
@@ -35,7 +34,7 @@ function setup() {
 
 function draw(){
   background('black');
-  //background(backgroundImage);
+  background(backgroundImage);
 
   switch (state) {
     case 0:
@@ -64,7 +63,7 @@ function draw(){
     image(win,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
         state = 0;
-      //isGameSet = false;
+
       }
       break;
 
@@ -73,13 +72,13 @@ function draw(){
       image(lose,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
         state = 0;
-        //isGameSet = false;
+
       }
       break;
   }
 }
 
-// Player Constructor
+
 function Player(){
   this.position = createVector(width/2,height/2);
   this.size = 80;
@@ -195,7 +194,7 @@ function Car2(){
   }
 }
 
-// moves cars & Player
+
 function manageMovement(){
   player.update();
 
@@ -224,17 +223,17 @@ function manageMovement(){
   }
 }
 
-//builds a generic scene with a title and a subtitle
+
 function buildText(textTitle,textMessage){
   fill("white");
   textSize(72);
   textAlign(CENTER, CENTER);
   text(textTitle,width/2,height/3);
   textSize(32);
-  text(textMessage,width/2,height/2+200);
+  text(textMessage,width/2,height-200);
 }
 
-//builds everything and starts the game
+
 function startGame(){
   //if (!music.isPlaying()) {
 
@@ -255,15 +254,7 @@ function startGame(){
     car2s.push(new Car2());
   }
   player = new Player();
-  //isGameSet = true;
+
   timer = 10;
   state++;
 }
-/* LET'S PLAN
-4. introduce a menu that you must click through to start the game
-5. introduce a win if you destroy all the cars
-6. create a win screen that you go to if you win
-7. introduce a timer that if you don't catch all the boxes you will lose
-8. create a lose screen
-
-*/
