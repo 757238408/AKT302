@@ -6,7 +6,7 @@ var car2s = []
 var player;
 var state = 0;
 var timer = 0;
-//let music;
+var music;
 var ice1;
 var ice2;
 var donut;
@@ -15,8 +15,7 @@ var win,lose;
 var backgroundImage;
 
 function preload() {
-  //soundFormats("");
-  //music = loadSound("");
+  music = loadSound("assets/login.mp3");
   ice1 = loadImage("assets/icecream1.png");
   ice2 = loadImage("assets/icecream2.png");
   donut = loadImage("assets/donut.png");
@@ -24,7 +23,6 @@ function preload() {
   win = loadImage("assets/win.jpg");
   lose = loadImage("assets/lose.jpg");
   backgroundImage = loadImage("assets/backgroundd.jpg")
-
 }
 
 function setup() {
@@ -46,19 +44,19 @@ function draw(){
       break;
 
     case 1:
-      manageMovement();
-
-      timer -= 1/60;
-
-      fill("white");
-      textSize(24);
-      text("" + round(timer),50,50);
-      if (timer <= 0) {
+    music.play();
+    manageMovement();
+    timer -= 1/60;
+    fill("white");
+    textSize(24);
+    text("" + round(timer),50,50);
+    if (timer <= 0) {
       state = "win"
       }
       break;
 
     case "win":
+    music.stop();
     buildText("YOU WON", "You successfully lose your weight)");
     image(win,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
@@ -68,10 +66,11 @@ function draw(){
       break;
 
     case "lose":
+    music.stop();
       buildText("YOU LOST", "You become a pig\n\n\n (click to restart)");
       image(lose,displayWidth/2,displayHeight/3+200,displayWidth/4,displayHeight/4);
       if (mouseIsPressed) {
-        state = 0;
+        state = 0
 
       }
       break;
@@ -235,10 +234,6 @@ function buildText(textTitle,textMessage){
 
 
 function startGame(){
-  //if (!music.isPlaying()) {
-
-    //music.play();
-  //}
   cars = [];
   for (var i = 0; i < 15; i++) {
     cars.push(new Car());
