@@ -9,7 +9,7 @@ var x = 0; // acceleration data
 var y = 0;
 var z = 0;
 
-let cars = [] ;
+let cars = [];
 let angle, px, py;
 
 // other variables
@@ -24,7 +24,7 @@ function setup() {
   beta = 0;
   gamma = 0;
 
-// initialize other variables
+  // initialize other variables
   me = loadImage("assets/me.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
@@ -34,7 +34,7 @@ function setup() {
 function draw() {
 
   background('#c6f5fe'); // light blue
-    // add an image for the background?
+  // add an image for the background?
   cars.push(new Car());
 
   // the map command !!!!
@@ -44,6 +44,7 @@ function draw() {
   // yPosition = map(beta, 60, 20, 0, height) ;
   xPosition = map(gamma, -18, 18, 0, width);
   yPosition = map(beta, 25, 45, 0, height);
+
 
   push(); // before you use translate, rotate, or scale commands, push and then pop after
   translate(xPosition, yPosition); // move everything over by x, y
@@ -77,38 +78,39 @@ function draw() {
   // text("y = " + y.toFixed(2), 25, 170);
   // text("z = " + z.toFixed(4), 25, 190);
 
-  for(let i = 0; i < cars.length; i++) {
+  for (let i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].update();
 
-    if(cars[i].a <= 0){
-      cars.splice(i,1);
+    if (cars[i].a <= 0) {
+      cars.splice(i, 1);
     }
   }
-  }
+}
 
-  class Car{
+class Car {
 
-  constructor(){
-    this.pos = createVector(windowWidth/2,windowWidth/2 + 150);
-    this.vel = createVector(random(-5,5),random(-5,-5));
+  constructor() {
+    this.pos = createVector(windowWidth / 2, windowWidth / 2 + 150);
+    this.vel = createVector(random(-5, 5), random(-5, -5));
     this.r = random(255);
     this.g = random(255);
     this.b = random(255);
-    this.a = random(200,255);
-    this.size = random(10,30);
+    this.a = random(200, 255);
+    this.size = random(10, 30);
   }
 
-  display(){
-    fill(this.r,this.g,this.b,this.a);
-    ellipse(this.pos.x,this.pos.y,this.size)
+  display() {
+    fill(this.r, this.g, this.b, this.a);
+    ellipse(this.pos.x, this.pos.y, this.size)
   }
 
-  update(){
+  update() {
     this.pos.add(this.vel);
     this.a = this.a - 5;
 
 
+  }
 }
 
 // HERE'S THE STUFF YOU NEED FOR READING IN DATA!!!
